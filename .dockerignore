@@ -1,0 +1,9 @@
+*.iml
+*.log
+.idea/
+*.md
+*.zip
+*.tar
+*.gz
+.DS_Store
+.git
