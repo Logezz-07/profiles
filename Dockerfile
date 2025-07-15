@@ -1,20 +1,14 @@
-# Use lightweight OpenJDK 17 base image
+# Use a lightweight JDK image
 FROM openjdk:17-jdk-slim
 
-# Set working directory in container
+# Set working directory
 WORKDIR /app
 
-# Copy the Spring Boot JAR and keystore into the container
+# Copy the Spring Boot JAR file
 COPY target/profile-0.0.1-SNAPSHOT.jar app.jar
-COPY src/main/resources/keystore.p12 keystore.p12
 
-# Expose HTTPS port
-EXPOSE 8443
+# Expose HTTP port
+EXPOSE 8080
 
-# Run the app with keystore config
-ENTRYPOINT ["java", "-jar", "app.jar", \
-  "--server.port=8443", \
-  "--server.ssl.enabled=true", \
-  "--server.ssl.key-store=keystore.p12", \
-  "--server.ssl.key-store-password=Logezz@07", \
-  "--server.ssl.key-store-type=PKCS12"]
+# Run the app
+ENTRYPOINT ["java", "-jar", "app.jar"]
