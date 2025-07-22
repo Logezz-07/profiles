@@ -8,17 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-@RequestMapping("/api")
-public class GetProfile {
-
-	@GetMapping("/timeout")
-	public ResponseEntity<Map<String, Object>> timeoutTest() {
-		Map<String, Object> response = new HashMap<>();
-		try {
-			package com.rogers.profile;
-
 import java.util.HashMap;
 import java.util.Map;
 
