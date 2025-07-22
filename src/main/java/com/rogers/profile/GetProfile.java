@@ -37,11 +37,4 @@ public class GetProfile {
 		}
 	}
 }
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-			response.put("statusCode", 500);
-			response.put("statusMessage", "Interrupted");
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
-		}
-	}
-}
+		
