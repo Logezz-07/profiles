@@ -22,8 +22,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class GetProfile {
 
 	@GetMapping("/timeout")
-	public ResponseEntity<Map<String, Object>> timeoutTest() {
+	public ResponseEntity<Map<String, Object>> timeoutTest(@RequestHeader(value = "time", required = false) String timeHeader) {
 		Map<String, Object> response = new HashMap<>();
+		System.out.println("Received time header as date: " +timeHeader);
 		try {
                     Thread.sleep(15000);
                     response.put("statusCode", 500);
